@@ -2,10 +2,10 @@
 
 pragma solidity ^0.8.13;
 
-//Aplicación CRUD - Create / Read / Update & Delete
+//Jendoduchá CRUD aplikace pro vytváření, čtení, úpravu a mazaní údajů o zaměstnancích
 contract Crud{
 
-        //Estructura de un usuario
+        //definvání struktury užiavtele/zaměstnance
         struct zamestnanec{
             uint id;
             string jmeno;
@@ -13,36 +13,36 @@ contract Crud{
             uint plat;
         }
 
-        //Lista de los usuarios
+        //pole se zaměstnanci
         zamestnanec[] zamestnanci;
 
-        //Proximo id del usuario
+        //id dalšího zaměstnance v poli
         uint nextId = 1;
         
-        //Funcion para crear un usuario
+        //funkce pro vytvoření nového zaměstnance
         function vytvorit_zam(string memory jmeno, string memory mail, uint plat) public {
             zamestnanci.push(zamestnanec(nextId, jmeno, mail, plat));
             nextId++;
         }
 
-         //Funcion para crear un usuario
+         //funkce pro výpis všech zaměstnanců (celého pole)
         function vsichni_zam() view public returns(zamestnanec[] memory){
             return(zamestnanci);
         }   
 
-         //Funcion para crear un usuario
+         //funkce pro zjisštění počtu zaměstnanců
         function pocet_zam() view public returns(uint pocet){
             return(zamestnanci.length);
         }   
 
-        //Funcion para obtener los datos de un usuario con el id.
+        //funkce pro výpis dat o zaměstnanci na základě jeho ID
         function cist_zam(uint _id) view  public returns(uint, string memory, string memory, uint){
             uint i = najit(_id);         
-            return(zamestnanci[i].id, zamestnanci[i].jmeno, zamestnanci[i].mail ,zamestnanci[i].plat);
+            return(zamestnanci[i].id, zamestnanci[i].jmeno, zamestnanci[i].mail, zamestnanci[i].plat);
             }
 
 
-        //Funcion actualizar datos usuario.
+        //funkce pro úpravu dat zaměstnance na základě jeho ID
         function upravit_zam(uint _id, string memory jmeno, string memory mail, uint plat) public {
             uint i = najit(_id);  
             zamestnanci[i].jmeno = jmeno;
@@ -50,14 +50,14 @@ contract Crud{
             zamestnanci[i].plat = plat;
             }
 
-        //Funcion eliminar usuario.
+        //funkce pro výmaz zaměstnance na základě ID
         function vymazat_zam(uint _id)public{
             uint i = najit(_id); 
             delete zamestnanci[i];
         }
 
 
-        //Funcion para buscar el id del usuario.
+        //funkce pro nalezení zaměstnance v poli na základě ID
         function najit(uint id)view internal returns(uint){
             for(uint i=0; i < zamestnanci.length ;i++){
                if(zamestnanci[i].id == id){
