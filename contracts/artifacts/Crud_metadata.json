@@ -6,6 +6,71 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "pozadovano",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "dostupne",
+						"type": "uint256"
+					}
+				],
+				"name": "NedostatekProstredku",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Sent",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balances",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -34,9 +99,40 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "minter",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "platba_vyplaty",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -73,6 +169,11 @@
 						"internalType": "uint256",
 						"name": "plat",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "eth_adresa",
+						"type": "address"
 					}
 				],
 				"name": "upravit_zam",
@@ -105,6 +206,11 @@
 								"internalType": "uint256",
 								"name": "plat",
 								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "eth_adresa",
+								"type": "address"
 							}
 						],
 						"internalType": "struct Crud.zamestnanec[]",
@@ -144,9 +250,32 @@
 						"internalType": "uint256",
 						"name": "plat",
 						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "eth_adresa",
+						"type": "address"
 					}
 				],
 				"name": "vytvorit_zam",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "ziskat_coiny",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -180,11 +309,11 @@
 	},
 	"sources": {
 		"contracts/emp_crud.sol": {
-			"keccak256": "0x337bb2f6f7df32cd25f44dfb1fb3de780bb6153820eabbe1012b2a123621dad5",
+			"keccak256": "0x21dcf58a16e26e09668f0c625085fa4072375451acaa2d3eb1125af64ad10eef",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://04ecb9585b2c031b53be91b37151e30fc5d4f2eacde16f7dfed74ae1c3add432",
-				"dweb:/ipfs/QmXsWKhGPWhZHxFYe7zUoX12J6G1hvmv2kFMTmYR3oNWqQ"
+				"bzz-raw://e286d8a813725a1daf04e92dbca304a48968a4a41e87862a6101bbbed2344b3f",
+				"dweb:/ipfs/QmYLHdNKVojutqaBfw67sTjkUnJy1h3kRYzCrDi84BL4mR"
 			]
 		}
 	},
