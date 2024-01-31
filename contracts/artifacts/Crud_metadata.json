@@ -6,8 +6,42 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "cist_zam",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
-				"name": "count",
+				"name": "pocet_zam",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -16,6 +50,82 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "jmeno",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "mail",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "plat",
+						"type": "uint256"
+					}
+				],
+				"name": "upravit_zam",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "vsichni_zam",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "jmeno",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "mail",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "plat",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Crud.zamestnanec[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "vymazat_zam",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -36,82 +146,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "create",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_id",
-						"type": "uint256"
-					}
-				],
-				"name": "destroy",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_id",
-						"type": "uint256"
-					}
-				],
-				"name": "read",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "_jmeno",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "_mail",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_plat",
-						"type": "uint256"
-					}
-				],
-				"name": "update",
+				"name": "vytvorit_zam",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -145,11 +180,11 @@
 	},
 	"sources": {
 		"contracts/emp_crud.sol": {
-			"keccak256": "0x92729b2eb883a3bdb117f731ea106072ba7749dcd73202c31d770d15d0cae1a8",
+			"keccak256": "0x6b2dbaace1c467567b7dbbc8777bf9c0c1aa341023848301cd940194323f2bcc",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://55017579527a4b7081f06eb753ac51b032e89ed205a07df8d4bf609d5f3a9d64",
-				"dweb:/ipfs/QmUjh1cSmm9UiSHBtyvdTCdmfmZBXhQ1Bj6CXrHNyaCtgj"
+				"bzz-raw://e6f18014a90b06a61b7272cfbfbececd2fdadb56ee2789e36c210ab7311aad6a",
+				"dweb:/ipfs/QmaNNj7BJvVhpm6GbfgtWruKrEFtBZivwxo4BJKPr5vXv8"
 			]
 		}
 	},
